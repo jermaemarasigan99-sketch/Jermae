@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> Web Layout </title>
+
+<style>
+
+/* Container */
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Article */
+article {
+    padding: 20px;
+    width: 70%;
+    background-color: mediumpurple;
+    min-height: 300px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 30%;
+    background: thistle;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar ul li a:hover {
+    background: lightpink;
+}
+
+/* Top Navigation */
+ul.nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: lavender;
+}
+
+ul.nav li a {
+    display: block;
+    color: pink;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.nav li a:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Header */
+header {
+    background-color: thistle;
+    padding: 5px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: lavender;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+/* Clearfix */
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h2> SDIHS </h2>
+    <h3 style="font-size: 18px;"> Santo Domingo Integrated High School </h3>
+</header>
+
+<!-- TOP NAVIGATION -->
+<ul class="nav">
+    <li> <a href="E eportfolio.html"> Home </a> </li>
+    <li> <a href="e-page2.0.html"> First Quarter </a> </li>
+    <li> <a href="e-page3.html"> Second Quarter </a> </li>
+    <li> <a href="https://www.facebook.com/santos.jessie.209703"> About </a> </li>
+</ul>
+
+<section>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+        <ul>
+            <li> <a href="#" onclick="loadContent('Content')"> Content</a> </li>
+            <li> <a href="#" onclick="loadContent('objective')"> objective</a> </li>
+            <li> <a href="#" onclick="loadContent('legal basis')"> legal basis</a> </li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <article id="content">
+        <h1> School Profile </h1>
+        <p>
+            Santo Domingo Integrated High School was founded in 1971. <br>
+            It is located at Barangay Santo Domingo, City of Santa Rosa, Laguna.
+        </p>
+    </article>
+
+</div>
+
+</section>
+
+<footer>
+    <p> ©jessiecarganillasantos41@gmail.com/09275480573</p>
+</footer>
+
+<script>
+
+function loadContent(section) {
+
+    const content = document.getElementById('content');
+
+    if (section === 'Content') {
+        content.innerHTML = `
+            <h2> School Profile </h2>
+            <h3> Mission </h3>
+            <p>"The Safe Mind Project is a student-led website that promotes mental wellness, kindness, and emotional support. It provides helpful tips, positive messages, and resources to guide students toward a calmer and healthier mind."
+                
+            </p>
+        `;
+    }
+
+    else if (section === 'objective') {
+        content.innerHTML = `
+            <h2> hatdog </h2>
+            <p>  Prevent Harmful Actions and Behaviors
+Reduce the risk of bullying, violence, self-harm, and risky behavior through education and awareness </p> Promote Help-Seeking Behavior
+Encourage individuals to reach out to trusted adults, professionals, or peers when facing emotional or mental challenges.
+           
+        `;
+
+
+    }
+
+    else if (section === 'legal basis') {
+        content.innerHTML = `
+            <h2> JHS </h2>
+            <p> Section:Banahaw <br> </p>
+        `;
+    }
+}
+
+</script>
+
+</body>
+</html>
